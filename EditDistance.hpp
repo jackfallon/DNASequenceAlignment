@@ -6,9 +6,9 @@
 #include <algorithm>
 #include <SFML/System.hpp>
 
-class EDistance {
+class EditDistance {
  public:
-        EDistance(std::string newS1, std::string newS2);
+        EditDistance(std::string newS1, std::string newS2);
         static int penalty(char a, char b);
         static int min(int a, int b, int c);
         int optDistance();
