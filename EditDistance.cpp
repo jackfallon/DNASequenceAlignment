@@ -1,7 +1,7 @@
 // Copyright 2023 [John Fallon]
-#include "EDistance.hpp"
+#include "EditDistance.hpp"
 
-EDistance::EDistance(std::string newS1, std::string newS2) {
+EditDistance::EditDistance(std::string newS1, std::string newS2) {
     s1 = newS1;
     s2 = newS2;
     std::vector<std::vector<int>> temp(s1.size() + 1, std::vector<int>(s2.size() + 1, 0));
@@ -15,7 +15,7 @@ EDistance::EDistance(std::string newS1, std::string newS2) {
     }
 }
 
-int EDistance::penalty(char a, char b) {
+int EditDistance::penalty(char a, char b) {
     if (a == b) {
         return 0;
     } else {
@@ -23,7 +23,7 @@ int EDistance::penalty(char a, char b) {
     }
 }
 
-int EDistance::min(int a, int b, int c) {
+int EditDistance::min(int a, int b, int c) {
     if (a < b && a < c) {
         return a;
     } else if (b < a && b < c) {
@@ -33,7 +33,7 @@ int EDistance::min(int a, int b, int c) {
     }
 }
 
-int EDistance::optDistance() {
+int EditDistance::optDistance() {
     for (size_t i = s1.size() - 1; i < s1.size(); i--) {
         for (size_t j = s2.size() - 1; j < s2.size(); j--) {
             opt[i][j] =
@@ -43,7 +43,7 @@ int EDistance::optDistance() {
     return opt[0][0];
 }
 
-std::string EDistance::alignment() {
+std::string EditDistance::alignment() {
     std::string output;
     size_t i = 0;
     size_t j = 0;
