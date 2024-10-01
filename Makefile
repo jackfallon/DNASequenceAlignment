@@ -1,8 +1,8 @@
 CC = g++
 FLAGS = -Wall -Werror -pedantic -std=c++17 -g
-PROGRAM = EDistance
-DEPS = EDistance.hpp
-OBJS = EDistance.o
+PROGRAM = EditDistance
+DEPS = EditDistance.hpp
+OBJS = EditDistance.o
 LIB = -lsfml-graphics -lsfml-window -lsfml-system
 
 all: $(PROGRAM)
