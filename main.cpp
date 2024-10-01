@@ -1,5 +1,5 @@
 #include <SFML/System.hpp>
-#include "EDistance.hpp"
+#include "EditDistance.hpp"
 
 
 int main() {
@@ -11,7 +11,7 @@ int main() {
 
     std::cin >> s1;
     std::cin >> s2;
-    EDistance e1(s1, s2);
+    EditDistance e1(s1, s2);
     int distance = e1.optDistance();
     std::cout << "Edit distance = " << distance << std::endl;
     std::string align = e1.alignment();
